@@ -1,0 +1,168 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0b9a338f, pid=436, tid=3796
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b19 mixed mode windows-x86)
+# Problematic frame:
+# C  [grfinger.dll+0x338f]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0aad2800):  VMThread [stack: 0x0ab60000,0x0abb0000] [id=3796]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0bd3fd1c
+
+Registers:
+EAX=0x0abafa4c, EBX=0x00000001, ECX=0x0bd3fd18, EDX=0x7c98079f
+ESP=0x0abaf9f8, EBP=0x0abafa5c, ESI=0x0bd3fd18, EDI=0x00000000
+EIP=0x0b9a338f, EFLAGS=0x00010216
+
+Top of Stack: (sp=0x0abaf9f8)
+0x0abaf9f8:   0bd3fd18 00000000 0bd3fd18 0abafa4c
+0x0abafa08:   0ba4e218 ffffffff 0b9a1a72 0b9a1a60
+0x0abafa18:   0b3a120a 00000000 0b3a1a07 0b3a2d07
+0x0abafa28:   0b3a0000 00000000 00000001 00000000
+0x0abafa38:   0abafa70 001a3ba0 00000001 0abafa34
+0x0abafa48:   0abaf61c 0abafaf0 0b3a4024 0b3a83b8
+0x0abafa58:   00000000 0abafa7c 7c9111a7 0b3a0000
+0x0abafa68:   00000000 00000001 001a3ba0 00000000 
+
+Instructions: (pc=0x0b9a338f)
+0x0b9a337f:   89 25 00 00 00 00 83 ec 08 56 8b f1 89 74 24 08
+0x0b9a338f:   8b 4e 04 8b 01 3b c1 c7 44 24 14 00 00 00 00 89 
+
+
+Stack: [0x0ab60000,0x0abb0000],  sp=0x0abaf9f8,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [grfinger.dll+0x338f]
+C  [ntdll.dll+0x11a7]
+C  [ntdll.dll+0x23f31]
+C  [kernel32.dll+0x1ca3e]
+C  [kernel32.dll+0x1cab6]
+C  [msvcr71.dll+0x8d04]
+
+VM_Operation (0x0b91f7d8): Exit, mode: safepoint, requested by thread 0x0b5a9c00
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x002e6800 JavaThread "DestroyJavaVM" [_thread_blocked, id=2568, stack(0x008d0000,0x00920000)]
+  0x0b5a9c00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=2780, stack(0x0b8d0000,0x0b920000)]
+  0x0afd0800 JavaThread "AWT-Shutdown" [_thread_blocked, id=2728, stack(0x0b1a0000,0x0b1f0000)]
+  0x0afc9000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1532, stack(0x0b150000,0x0b1a0000)]
+  0x0ab0f800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1540, stack(0x0ae50000,0x0aea0000)]
+  0x0ab04800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=460, stack(0x0ae00000,0x0ae50000)]
+  0x0aaf7c00 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=3064, stack(0x0ad60000,0x0adb0000)]
+  0x0aaea800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3072, stack(0x0aca0000,0x0acf0000)]
+  0x0aae9800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3076, stack(0x0ac50000,0x0aca0000)]
+  0x0aada000 JavaThread "Finalizer" daemon [_thread_blocked, id=2576, stack(0x0ac00000,0x0ac50000)]
+  0x0aad5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2584, stack(0x0abb0000,0x0ac00000)]
+
+Other Threads:
+=>0x0aad2800 VMThread [stack: 0x0ab60000,0x0abb0000] [id=3796]
+
+VM state:at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x002e5f78/0x00002710] Threads_lock - owner thread: 0x0aad2800
+
+Heap
+ def new generation   total 960K, used 208K [0x029c0000, 0x02ac0000, 0x02ea0000)
+  eden space 896K,  20% used [0x029c0000, 0x029ede98, 0x02aa0000)
+  from space 64K,  38% used [0x02aa0000, 0x02aa6258, 0x02ab0000)
+  to   space 64K,   0% used [0x02ab0000, 0x02ab0000, 0x02ac0000)
+ tenured generation   total 4096K, used 2320K [0x02ea0000, 0x032a0000, 0x069c0000)
+   the space 4096K,  56% used [0x02ea0000, 0x030e41b0, 0x030e4200, 0x032a0000)
+ compacting perm gen  total 13312K, used 13121K [0x069c0000, 0x076c0000, 0x0a9c0000)
+   the space 13312K,  98% used [0x069c0000, 0x07690700, 0x07690800, 0x076c0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	C:\Archivos de programa\Java\jdk1.6.0_05\bin\java.exe
+0x7c910000 - 0x7c9c6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c901000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e4c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\msvcr71.dll
+0x6d870000 - 0x6dac0000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\client\jvm.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f36000 	C:\WINDOWS\system32\GDI32.dll
+0x76b00000 - 0x76b2e000 	C:\WINDOWS\system32\WINMM.dll
+0x6d320000 - 0x6d328000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\hpi.dll
+0x76bb0000 - 0x76bbb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d410000 - 0x6d439000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\jdwp.dll
+0x6d770000 - 0x6d776000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\npt.dll
+0x6d820000 - 0x6d82c000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\verify.dll
+0x6d3c0000 - 0x6d3df000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\java.dll
+0x6d860000 - 0x6d86f000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\zip.dll
+0x6d280000 - 0x6d288000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\dt_shmem.dll
+0x6d0b0000 - 0x6d1de000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\awt.dll
+0x72f80000 - 0x72fa6000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\msvcrt.dll
+0x76340000 - 0x7635d000 	C:\WINDOWS\system32\IMM32.dll
+0x774b0000 - 0x775ec000 	C:\WINDOWS\system32\ole32.dll
+0x5b150000 - 0x5b188000 	C:\WINDOWS\system32\uxtheme.dll
+0x736e0000 - 0x73729000 	C:\WINDOWS\system32\ddraw.dll
+0x73b40000 - 0x73b46000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x6d2c0000 - 0x6d313000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\fontmanager.dll
+0x746b0000 - 0x746fb000 	C:\WINDOWS\system32\MSCTF.dll
+0x10000000 - 0x1003b000 	C:\DOCUME~1\silvina\CONFIG~1\Temp\cvasds0.dll
+0x77180000 - 0x77227000 	C:\WINDOWS\system32\WININET.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x77a50000 - 0x77ae5000 	C:\WINDOWS\system32\CRYPT32.dll
+0x77af0000 - 0x77b02000 	C:\WINDOWS\system32\MSASN1.dll
+0x770f0000 - 0x7717c000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x773a0000 - 0x774a2000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9\comctl32.dll
+0x71a30000 - 0x71a47000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a20000 - 0x71a28000 	C:\WINDOWS\system32\WS2HELP.dll
+0x7c9d0000 - 0x7d1ee000 	C:\WINDOWS\system32\shell32.dll
+0x58c30000 - 0x58cc7000 	C:\WINDOWS\system32\comctl32.dll
+0x6d620000 - 0x6d633000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\net.dll
+0x6d640000 - 0x6d649000 	C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin\nio.dll
+0x0b3a0000 - 0x0b3af000 	C:\Archivos de programa\Griaule\GrFinger 4.2\bin\GrFingerJava.dll
+0x0b9a0000 - 0x0bc06000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\grfinger.dll
+0x0bc10000 - 0x0bc25000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\pthreadVC2.dll
+0x71a50000 - 0x71a5a000 	C:\WINDOWS\system32\WSOCK32.dll
+0x76740000 - 0x76749000 	C:\WINDOWS\system32\SHFOLDER.dll
+0x0d620000 - 0x0d62d000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\CaptureSDK.dll
+0x0d790000 - 0x0d79f000 	C:\WINDOWS\system32\libusb0.dll
+0x74a70000 - 0x74a77000 	C:\WINDOWS\system32\cfgmgr32.dll
+0x778f0000 - 0x779e7000 	C:\WINDOWS\system32\setupapi.dll
+0x0d810000 - 0x0d821000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\fplib.dll
+0x77bd0000 - 0x77bd8000 	C:\WINDOWS\system32\VERSION.dll
+0x0d890000 - 0x0d8bd000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\extdllR.dll
+0x0d9d0000 - 0x0da0a000 	C:\ARCHIV~1\Griaule\GRFING~1.2\bin\vrfdllR.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_shmem,address=javadebug -Dfile.encoding=UTF-8 
+java_command: scu.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=C:\ARCHIV~1\Griaule\GRFING~1.2\bin\GRFING~2.JAR
+PATH=C:\Inprise\vbroker\bin;C:\Archivos de programa\Borland\Delphi7\Bin;C:\Archivos de programa\Borland\Delphi7\Projects\Bpl\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Archivos de programa\Microsoft SQL Server\100\DTS\Binn\;C:\Archivos de programa\Microsoft SQL Server\100\Tools\Binn\;C:\Archivos de programa\IVT Corporation\BlueSoleil\Mobile;C:\ARCHIV~1\Griaule\GRFING~1.2\bin
+USERNAME=silvina
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 14 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 14 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3
+
+Memory: 4k page, physical 1039724k(383560k free), swap 2501080k(1957576k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b19) for windows-x86 JRE (1.6.0_05-b13), built on Feb 22 2008 01:16:53 by "java_re" with MS VC++ 7.1
+
+time: Mon Aug 24 02:51:16 2009
+elapsed time: 78 seconds
+
